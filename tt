@@ -1,0 +1,21 @@
+package web;
+import org.springframework.ui.*;
+import org.springframework.stereotype.*;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+class Service {
+        @GetMapping("/merge")
+        String mergeWord(String a, String b) {
+                char[] cA = a.toCharArray();
+                char[] cB = b.toCharArray();
+                String w =  "";
+                for (int i = 0; i < cA.length;i++) {
+                        w = w + cA[i] + cB[i];
+
+                }
+                return w;
+
+        }
+
+}
